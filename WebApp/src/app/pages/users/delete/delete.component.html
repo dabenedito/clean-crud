@@ -1,0 +1,29 @@
+<div>
+  <div class="modal-header">
+    <h5 class="modal-title">Deletar usuário?</h5>
+    <button
+      class="btn-close"
+      aria-label="Close"
+      (click)="closeModal()"
+    ></button>
+  </div>
+
+  <div class="modal-body">
+    <p>
+      <span class="fw-bold">Nome:</span> {{ user.name }}
+      <br>
+      <span class="fw-bold">Nascimento:</span> {{ user.birthDate | date: 'dd/MM/yyyy' }}
+    </p>
+    <div class="alert alert-danger d-flex align-items-center justify-content-start gap-3" role="alert">
+      <i class="bi bi-exclamation-triangle-fill"></i>
+      <div>
+        Essa ação não poderá ser desfeita.
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-secondary" type="button" (click)="closeModal()">Cancelar</button>
+    <button class="btn btn-danger" type="button" (click)="deleteUser()">Confirmar</button>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<div>
+  <div class="modal-header">
+    <h5 class="modal-title">Detalhes do usuário</h5>
+    <button
+      class="btn-close"
+      aria-label="Close"
+      (click)="closeModal()"
+    ></button>
+  </div>
+
+  <div class="modal-body">
+    <span class="fw-bold">Nome:</span> {{ user.name }}
+    <br>
+    <span class="fw-bold">Nascimento:</span> {{ user.birthDate | date: 'dd/MM/yyyy' }}
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="py-1 d-flex flex-column align-items-start justify-content-center gap-3">
+  <button class="btn btn-primary" type="button" (click)="openFormModal()">
+    Criar novo usuário
+  </button>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Nascimento</th>
+      <th scope="col" class="text-end">Ações</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    @for (user of users; track user.id; let i = $index) {
+      <tr class="table-row">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.birthDate | date: 'dd/MM/yyyy' }}</td>
+        <td>
+          <div class="d-flex w-fit gap-1 align-items-center justify-content-end">
+            <button class="btn btn-sm btn-outline-secondary" (click)="openDetailModal(user)">Visualizar</button>
+            <button class="btn btn-sm btn-outline-secondary" (click)="openFormModal(user)">Editar</button>
+            <button class="btn btn-sm btn-danger" (click)="openDeleteModal(user)">Excluir</button>
+          </div>
+        </td>
+      </tr>
+    }
+  </table>
+
+  <span *ngIf="!users.length" class="w-100 text-center">
+    Nenhum usuário cadastrado.
+  </span>
+</div>

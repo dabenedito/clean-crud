@@ -1,0 +1,47 @@
+# ======== GLOBAL ========
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# ======== NODE (Angular) ========
+/WebApp/node_modules/
+WebApp/dist/
+WebApp/.angular/cache/
+WebApp/.angular/
+WebApp/.vscode/
+
+# ======== .NET (C#) ========
+/WebAPI/bin/
+WebAPI/obj/
+WebAPI/**/*.user
+WebAPI/**/*.suo
+WebAPI/.vs/
+WebAPI/.vscode/
+WebAPI/*.db
+WebAPI/.idea/
+
+# Ignore NuGet packages
+WebAPI/packages/
+*.nupkg
+*.snupkg
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ASP.NET generated secrets folder
+WebAPI/appsettings.Development.json
+WebAPI/Properties/launchSettings.json
+
+# EF Core Migrations snapshots (opcional)
+# backend/Migrations/*Snapshot.cs
+
+# Others
+*.coverage
+*.orig
